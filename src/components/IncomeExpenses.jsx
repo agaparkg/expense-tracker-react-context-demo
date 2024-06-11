@@ -1,4 +1,8 @@
-export const IncomeExpenses = ({ transactions }) => {
+import { useGlobalContext } from "../context/GlobalProvider";
+
+export const IncomeExpenses = () => {
+  const { transactions } = useGlobalContext();
+
   const amounts = transactions.map((transaction) => transaction.amount);
 
   const totalIncome = amounts

@@ -1,7 +1,10 @@
 import React from "react";
 import { getSignWithAmount } from "../utils/helpers";
+import { useGlobalContext } from "../context/GlobalProvider";
 
-export const Transaction = ({ transaction, deleteTransaction }) => {
+export const Transaction = ({ transaction }) => {
+  const { deleteTransaction } = useGlobalContext();
+
   const customClass = transaction.amount < 0 ? "minus" : "plus";
 
   return (
